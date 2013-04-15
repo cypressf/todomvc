@@ -10,7 +10,7 @@ var app = app || {};
 	// Our basic **Todo** model has `title`, `order`, and `completed` attributes.
 	app.Todo = Backbone.Model.extend({
 		// Default attributes for the todo
-		// and ensure that each todo created has `title` and `completed` keys.
+		// and ensure that each todo created has `title`, `completed` and `user` keys.
 		defaults: {
 			title: '',
 			completed: false,
@@ -23,5 +23,13 @@ var app = app || {};
 				completed: !this.get('completed')
 			});
 		}
+	});
+
+	app.User = Backbone.Model.extend({
+		// Default attributes for the user
+		// and ensure that each user created has `name` key.
+		defaults: {
+			name: ''
+		},
 	});
 })();

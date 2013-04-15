@@ -24,6 +24,13 @@
 			<p>Written by <a href="https://github.com/addyosmani">Addy Osmani</a></p>
 			<p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
 		</footer>
+
+		<script type="text/template" id="user-template">
+			<ul id="users">
+				<li><%- name %></li>
+			</ul>
+		</script>
+
 		<script type="text/template" id="item-template">
 			<div class="view">
 				<input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %>>
@@ -32,6 +39,7 @@
 			</div>
 			<input class="edit" value="<%- title %>">
 		</script>
+
 		<script type="text/template" id="stats-template">
 			<span id="todo-count"><strong><%= remaining %></strong> <%= remaining === 1 ? 'item' : 'items' %> left</span>
 			<ul id="filters">

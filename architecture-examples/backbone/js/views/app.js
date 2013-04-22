@@ -30,6 +30,7 @@ var app = app || {};
 		initialize: function () {
 			this.allCheckbox = this.$('#toggle-all')[0];
 			this.$input = this.$('#new-todo');
+			this.$user_input = this.$('#new-user');
 			this.$footer = this.$('#footer');
 			this.$main = this.$('#main');
 

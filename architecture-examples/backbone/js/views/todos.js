@@ -18,7 +18,8 @@ var app = app || {};
 		// The DOM events specific to an item.
 		events: {
 			'click .toggle': 'toggleCompleted',
-			'dblclick label': 'edit',
+			'click .title_label': 'edit',
+			'click .user_label': 'edit_user',
 			'click .destroy': 'clear',
 			'keypress .edit': 'updateOnEnter',
 			'blur .edit': 'close'
@@ -59,10 +60,16 @@ var app = app || {};
 			this.model.toggle();
 		},
 
-		// Switch this view into `"editing"` mode, displaying the input field.
+		// Switch this view into `"title editing"` mode, displaying the title input field.
 		edit: function () {
 			this.$el.addClass('editing');
 			this.$input.focus();
+		},
+
+		// Switch this view into `"user editing"` mode, displaying the user input field.
+		edit_user: function () {
+			this.$el.addClass('editing');
+			this.$user_input.focus();
 		},
 
 		// Close the `"editing"` mode, saving changes to the todo.

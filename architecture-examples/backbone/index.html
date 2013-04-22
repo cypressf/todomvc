@@ -5,6 +5,18 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title>Backbone.js • TodoMVC CypressF</title>
 		<link rel="stylesheet" href="components/todomvc-common/base.css">
+		<style>
+		input.edit_user {
+			display:none;
+		}
+
+		#todo-list li label.user_label {
+			width:20%;
+			position:absolute;
+			right:60px;
+			top:0;
+		}
+		</style>
 	</head>
 	<body>
 		<section id="todoapp">
@@ -34,10 +46,13 @@
 		<script type="text/template" id="item-template">
 			<div class="view">
 				<input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %>>
-				<label><%- title %> <%- user %></label>
+				<label class="title_label"><%- title %></label>
+				<label class="user_label"><%- user %></label>
 				<button class="destroy"></button>
 			</div>
 			<input class="edit" value="<%- title %>">
+			<input type="text" class="edit_user" value="<%- user %>">
+
 		</script>
 
 		<script type="text/template" id="stats-template">

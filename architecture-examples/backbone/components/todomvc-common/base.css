@@ -111,6 +111,7 @@ body {
 
 #new-todo,
 .edit,
+.edit_user,
 #new-user {
 	position: relative;
 	margin: 0;
@@ -136,9 +137,8 @@ body {
 }
 
 .edit {
-	width: 100%;
+	width: 300px;
 }
-
 
 #new-todo, #new-user {
 	padding: 16px 16px 16px 0px;
@@ -150,10 +150,10 @@ body {
 
 #new-todo {
 	padding-left:60px;
-	width:70%;
+	width:375px;
 }
-#new-user {
-	width:30%;
+#new-user, .edit_user {
+	width:173px;
 	right:0;
 	position:absolute;
 }
@@ -209,11 +209,24 @@ label[for='toggle-all'] {
 	padding: 0;
 }
 
-#todo-list li.editing .edit {
+#todo-list li.editing .edit,
+#todo-list li.editing .edit_user {
 	display: block;
-	width: 506px;
+}
+
+#todo-list li.editing .edit {
+	width: 315px;
 	padding: 13px 17px 12px 17px;
 	margin: 0 0 0 43px;
+}
+
+#todo-list li.editing .edit_user {
+	position:absolute;
+	right:0;
+	top:0;
+	display: block;
+	width: 172px;
+	padding: 13px 15px 12px 0px;
 }
 
 #todo-list li.editing .view {
@@ -254,8 +267,7 @@ label[for='toggle-all'] {
 
 #todo-list li label {
 	word-break: break-word;
-	padding: 15px;
-	margin-left: 45px;
+	padding: 15px 15px 15px 0px;
 	display: block;
 	line-height: 1.2;
 	-webkit-transition: color 0.4s;
@@ -263,6 +275,24 @@ label[for='toggle-all'] {
 	-ms-transition: color 0.4s;
 	-o-transition: color 0.4s;
 	transition: color 0.4s;
+}
+#todo-list li label.title_label {
+	padding-left: 60px;
+}
+
+input.edit_user {
+	display:none;
+}
+
+#todo-list li label.title_label {
+	width:300px;
+}
+
+#todo-list li label.user_label {
+	width:157px;
+	position:absolute;
+	right:0;
+	top:0;
 }
 
 #todo-list li.completed label {
